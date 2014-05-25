@@ -1,2 +1,9 @@
 # Compiled
 *.elc
+
+# emacs backup filenames
+*~
+
+# ehsell history
+eshell
+
