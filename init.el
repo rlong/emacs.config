@@ -1,7 +1,44 @@
 ;
-; version: 2014-05-06
+; version: 2014-10-03
 ;
 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; Enable 'Find File at Point' (FFAP)
+;; 
+;; platform-applibility: all
+;; 
+
+
+(ffap-bindings)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; Integrate Emacs copy/paste with System copy/paste
+;; 
+;; platform-applibility: linux (some including 'debian wheezy')
+;; reference: http://stackoverflow.com/questions/3216081/integrate-emacs-copy-paste-with-system-copy-paste
+;;
+
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; Load `dired-x`
+;;
+;; binds `C-x C-j` to 'dired-jump'
+;;
+;; platform-applibility: all
+;;
+
+
+
+(require 'dired-x)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
@@ -21,6 +58,7 @@
 
 
 (load "~/.emacs.d/emacs-markdown-mode-init.el")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
