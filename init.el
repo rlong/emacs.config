@@ -22,9 +22,9 @@
 ;; platform-applibility: linux (some including 'debian wheezy')
 ;; reference: http://stackoverflow.com/questions/3216081/integrate-emacs-copy-paste-with-system-copy-paste
 ;;
-
-(setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+;;
+;; (setq x-select-enable-clipboard t)
+;; (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
