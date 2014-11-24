@@ -169,8 +169,8 @@ Note the weekly scope of the command's precision.")
 ; vvv http://stackoverflow.com/questions/916797/emacs-global-set-key-to-c-tab
 
 
-(global-set-key (kbd "<C-tab>") 'previous-buffer)
-(global-set-key (kbd "<C-S-tab>") 'next-buffer)
+(global-set-key (kbd "<C-tab>") 'next-multiframe-window)
+(global-set-key (kbd "<C-S-tab>") 'previous-multiframe-window)
 
 ; ^^^ http://stackoverflow.com/questions/916797/emacs-global-set-key-to-c-tab
 
