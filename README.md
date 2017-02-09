@@ -1,4 +1,3 @@
-# emacs.d #
 
+look at `emacs.config.md`
 
-contents of `~/.emacs.d`
