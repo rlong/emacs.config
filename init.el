@@ -186,6 +186,17 @@ Note the weekly scope of the command's precision.")
 ; ^^^ http://www.emacswiki.org/CuaMode
 
 
+; Set emacs “Meta” key to be the mac command key
+; vvv https://superuser.com/questions/297259/set-emacs-meta-key-to-be-the-mac-key
+
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
+
+; ^^^ https://superuser.com/questions/297259/set-emacs-meta-key-to-be-the-mac-key
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
