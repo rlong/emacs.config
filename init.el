@@ -82,7 +82,7 @@ Uses `current-date-time-format' for the formatting the date/time."
 
 
 ; old-format: "%a %H:%M:%S"
-(defvar insert-current-time-format "%H:%M "
+(defvar insert-current-time-format "%H:%M"
   "Format of date to insert with `insert-current-time' func.
 Note the weekly scope of the command's precision.")
 
