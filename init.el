@@ -70,10 +70,9 @@ See help of `format-time-string' for possible replacements")
   "insert the current date and time into current buffer.
 Uses `current-date-time-format' for the formatting the date/time."
        (interactive)
-       ;(insert "==========\n")
-       ;(insert (let () (comment-start)))
+       ;(insert (let () (comment-start))e
        (insert (format-time-string insert-current-date-format (current-time)))
-       ;(insert "\n")
+       (insert "\n==========\n")
        )
 
 
@@ -90,8 +89,9 @@ Note the weekly scope of the command's precision.")
 (defun insert-current-time ()
   "insert the current time (1-week scope) into the current buffer."
        (interactive)
+       (insert "* ")
        (insert (format-time-string insert-current-time-format (current-time)))
-       ;(insert "\n")
+       (insert ": ")
        )
 
 
