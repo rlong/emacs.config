@@ -1,7 +1,6 @@
 ;
-; version: 2014-10-03
+; version: 2026-02-18
 ;
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -41,14 +40,6 @@
 (require 'dired-x)
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;; load markdown support 
-;;
-;;
-
-
-(load "~/.emacs.d/emacs-markdown-mode-init.el")
 
 
 
@@ -220,3 +211,51 @@ Note the weekly scope of the command's precision.")
     (insert (base64-encode-string result))
     )
   )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;;  Save Bookmarks automatically when they are updated 
+;; 
+;; [Emacs: Bookmark Init](http://xahlee.info/emacs/emacs/emacs_bookmark_init.html)
+;; 
+
+
+(setq bookmark-save-flag 1)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 
+;; Add MELPA (Milkypostman’s Emacs Lisp Package Archive)
+;; 
+;; [Markdown Mode for Emacs](https://jblevins.org/projects/markdown-mode/)
+;; 
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Add Markdown support
+;;
+;; [Markdown Mode for Emacs](https://jblevins.org/projects/markdown-mode/)
+;;
+;; M-x package-install RET markdown-mode RET 
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(markdown-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
