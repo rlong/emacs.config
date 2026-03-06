@@ -53,40 +53,40 @@
 ;; current date
 
 ; old-format: "%a %b %d %H:%M:%S %Z %Y"
-(defvar insert-current-date-format "%Y-%m-%d"
-  "Format of date to insert with `insert-current-date-time' func
+(defvar current-date-insert-format "%Y-%m-%d"
+  "Format of date to insert with `current-date-insert' func
 See help of `format-time-string' for possible replacements")
 
-(defun insert-current-date ()
+(defun current-date-insert ()
   "insert the current date and time into current buffer.
-Uses `current-date-time-format' for the formatting the date/time."
+Uses `current-date-insert-format' for the formatting the date/time."
        (interactive)
        ;(insert (let () (comment-start))e
-       (insert (format-time-string insert-current-date-format (current-time)))
+       (insert (format-time-string current-date-insert-format (current-time)))
        (insert "\n==========\n")
        )
 
 
-(global-set-key "\C-c\C-i\C-c\C-d" 'insert-current-date)
+(global-set-key "\C-c\C-c\C-d\C-i" 'current-date-insert)
 
 ;; current time
 
 
 ; old-format: "%a %H:%M:%S"
-(defvar insert-current-time-format "%H:%M"
-  "Format of date to insert with `insert-current-time' func.
+(defvar current-time-insert-format "%H:%M"
+  "Format of date to insert with `current-time-insert' func.
 Note the weekly scope of the command's precision.")
 
-(defun insert-current-time ()
+(defun current-time-insert ()
   "insert the current time (1-week scope) into the current buffer."
        (interactive)
        (insert "* ")
-       (insert (format-time-string insert-current-time-format (current-time)))
+       (insert (format-time-string current-time-insert-format (current-time)))
        (insert ": ")
        )
 
 
-(global-set-key "\C-c\C-i\C-c\C-t" 'insert-current-time)
+(global-set-key "\C-c\C-c\C-t\C-i" 'current-time-insert)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
