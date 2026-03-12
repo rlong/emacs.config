@@ -80,7 +80,7 @@ Note the weekly scope of the command's precision.")
 (defun current-time-insert ()
   "insert the current time (1-week scope) into the current buffer."
        (interactive)
-       (insert "* ")
+       (insert "- ")
        (insert (format-time-string current-time-insert-format (current-time)))
        (insert ": ")
        )
