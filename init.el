@@ -259,3 +259,31 @@ Note the weekly scope of the command's precision.")
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Personal key-bindings
+;;
+;; [keyboard - What are good custom keybindings in emacs? - Stack Overflow](https://stackoverflow.com/questions/5682631/what-are-good-custom-keybindings-in-emacs)
+;;
+
+(global-unset-key "\C-l")
+(defvar ctl-l-map (make-keymap)
+     "Keymap for local bindings and functions, prefixed by (^L)")
+(define-key global-map "\C-l" 'Control-L-prefix)
+(fset 'Control-L-prefix ctl-l-map)
+
+
+(define-key ctl-l-map "\C-l" 'redraw-display)
+(define-key ctl-l-map "l"    'recenter)
+
+(define-key ctl-l-map "at" 'ascii-table)
+(define-key ctl-l-map "id" 'current-date-insert)
+(define-key ctl-l-map "it" 'current-time-insert)
+(define-key ctl-l-map "dtw" 'delete-trailing-whitespace)
+
+
+
+
+
