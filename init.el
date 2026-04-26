@@ -282,8 +282,25 @@ Note the weekly scope of the command's precision.")
 (define-key ctl-l-map "id" 'current-date-insert)
 (define-key ctl-l-map "it" 'current-time-insert)
 (define-key ctl-l-map "dtw" 'delete-trailing-whitespace)
+(define-key ctl-l-map "``" (lambda ()
+	(interactive)
+	(insert "```\n```\n")))
+(define-key ctl-l-map "`b" (lambda ()
+	(interactive)
+	(insert "```bash\n```\n")))
+(define-key ctl-l-map "`m" (lambda ()
+	(interactive)
+	(insert "```markdown\n```\n")))
+
+;; navigation
+
+(global-set-key (kbd "<M-down>") 'scroll-up-command)
+(global-set-key (kbd "<M-up>")   'scroll-down-command)
+
+;; buffers
 
 
-
+(global-set-key (kbd "C-<") 'previous-buffer)
+(global-set-key (kbd "C->") 'next-buffer)
 
 
