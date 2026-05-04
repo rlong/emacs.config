@@ -4,20 +4,20 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; Enable 'Find File at Point' (FFAP)
-;; 
+;;
 ;; platform-applibility: all
-;; 
+;;
 
 
 (ffap-bindings)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; Integrate Emacs copy/paste with System copy/paste
-;; 
+;;
 ;; platform-applibility: linux (some including 'debian wheezy')
 ;; reference: http://stackoverflow.com/questions/3216081/integrate-emacs-copy-paste-with-system-copy-paste
 ;;
@@ -27,7 +27,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; Load `dired-x`
 ;;
 ;; binds `C-x C-j` to 'dired-jump'
@@ -44,8 +44,8 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;; print current date / current time 
+;;
+;; print current date / current time
 ;;
 ;; reference: http://stackoverflow.com/questions/251908/how-can-i-insert-current-date-and-time-into-a-file-using-emacs
 
@@ -89,8 +89,8 @@ Note the weekly scope of the command's precision.")
 (global-set-key "\C-c\C-c\C-t\C-i" 'current-time-insert)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;; ascii table support 
+;;
+;; ascii table support
 ;;
 ;; reference: http://www.emacswiki.org/AsciiTable
 
@@ -213,23 +213,30 @@ Note the weekly scope of the command's precision.")
   )
 
 
+(defun sha256-current-kill-2 ()
+  (interactive)
+  (let* ((kill   (current-kill 0))
+         (hex    (secure-hash 'sha256 kill))
+         (binary (secure-hash 'sha256 kill nil nil t)))
+    (insert "\n" hex "\n" (base64-encode-string binary t))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
-;;  Save Bookmarks automatically when they are updated 
-;; 
+;;
+;;  Save Bookmarks automatically when they are updated
+;;
 ;; [Emacs: Bookmark Init](http://xahlee.info/emacs/emacs/emacs_bookmark_init.html)
-;; 
+;;
 
 
 (setq bookmark-save-flag 1)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; Add MELPA (Milkypostman’s Emacs Lisp Package Archive)
-;; 
+;;
 ;; [Markdown Mode for Emacs](https://jblevins.org/projects/markdown-mode/)
-;; 
+;;
 
 (require 'package)
 (add-to-list 'package-archives
@@ -244,7 +251,7 @@ Note the weekly scope of the command's precision.")
 ;;
 ;; [Markdown Mode for Emacs](https://jblevins.org/projects/markdown-mode/)
 ;;
-;; M-x package-install RET markdown-mode RET 
+;; M-x package-install RET markdown-mode RET
 
 
 (custom-set-variables
@@ -302,5 +309,3 @@ Note the weekly scope of the command's precision.")
 
 (global-set-key (kbd "C-<") 'previous-buffer)
 (global-set-key (kbd "C->") 'next-buffer)
-
-
