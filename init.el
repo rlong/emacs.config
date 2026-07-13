@@ -268,6 +268,18 @@ Note the weekly scope of the command's precision.")
  )
 
 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Enable auto-revert (2026-06-01)
+;;
+;; [auto revert mode - automatically update buffers when focusing if file changed - Emacs Stack Exchange](https://emacs.stackexchange.com/questions/28260/automatically-update-buffers-when-focusing-if-file-changed)
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-auto-revert-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Personal key-bindings
