@@ -80,7 +80,7 @@ Note the weekly scope of the command's precision.")
 (defun current-time-insert ()
   "insert the current time (1-week scope) into the current buffer."
        (interactive)
-       (insert "- ")
+       ; (insert "- ")
        (insert (format-time-string current-time-insert-format (current-time)))
        (insert ": ")
        )
@@ -280,6 +280,40 @@ Note the weekly scope of the command's precision.")
 
 (global-auto-revert-mode)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Copy buffer directory (2026-07-29)
+;;
+;; from an AI exchange, will work with windows paths
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(defun my/copy-buffer-directory ()
+    "Copy the directory of the current file to the kill ring."
+    (interactive)
+    (if-let ((dir (cond
+                   (buffer-file-name (file-name-directory buffer-file-name))
+                   ((derived-mode-p 'dired-mode) default-directory))))
+        (progn
+          (kill-new (expand-file-name dir))
+          (message "Copied: %s" dir))
+      (message "Buffer is not visiting a file")))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; override markdown modes drag-and-drop file behaviour (2026-07-29)
+;;
+;; from an AI exchange: "Recent markdown-mode versions (2.8+) install their own drop handler in markdown buffers, and its default behavior is to insert a link to the dropped file rather than open it"
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(setq markdown-yank-dnd-method 'open)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; Personal key-bindings
@@ -298,6 +332,7 @@ Note the weekly scope of the command's precision.")
 (define-key ctl-l-map "l"    'recenter)
 
 (define-key ctl-l-map "at" 'ascii-table)
+(define-key ctl-l-map "cbd" #'my/copy-buffer-directory)
 (define-key ctl-l-map "id" 'current-date-insert)
 (define-key ctl-l-map "it" 'current-time-insert)
 (define-key ctl-l-map "dtw" 'delete-trailing-whitespace)
