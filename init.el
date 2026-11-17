@@ -316,6 +316,19 @@ Note the weekly scope of the command's precision.")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
+;; Control-Shift-Enter follows a link in markdown mode, same as C-c C-o (2026-11-17)
+;;
+;; (Control-Enter is taken by cua-mode's rectangle mark)
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(with-eval-after-load 'markdown-mode
+  (define-key markdown-mode-map (kbd "C-S-<return>") #'markdown-follow-thing-at-point))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;; Personal key-bindings
 ;;
 ;; [keyboard - What are good custom keybindings in emacs? - Stack Overflow](https://stackoverflow.com/questions/5682631/what-are-good-custom-keybindings-in-emacs)
