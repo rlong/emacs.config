@@ -351,13 +351,13 @@ Note the weekly scope of the command's precision.")
 (define-key ctl-l-map "dtw" 'delete-trailing-whitespace)
 (define-key ctl-l-map "``" (lambda ()
 	(interactive)
-	(insert "```\n```\n")))
+	(insert "```\n\n```\n")))
 (define-key ctl-l-map "`b" (lambda ()
 	(interactive)
-	(insert "```bash\n```\n")))
+	(insert "```bash\n\n```\n")))
 (define-key ctl-l-map "`m" (lambda ()
 	(interactive)
-	(insert "```markdown\n```\n")))
+	(insert "```markdown\n\n```\n")))
 
 ;; navigation
 
